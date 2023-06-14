@@ -1,0 +1,927 @@
+CONTROL STRUCTURE:
+-------------------------------
+* Control structrure refers to the order in which the various instruction in a programs are to be executed.
+
+* The other name for control sturcture "flow of control".
+
+control structrue classified into three types:
+
+1.SEQUENTIAL CONTROL STRUCTURE - ONE BY ONE
+
+2.SELECTIVE CONTROL STURCUTRE - TO ALLOWS TO CREATE THE CONDITION
+
+3.REPETATIVE CONTROL STRUCUTRE - TO ALLOWS TO CREATE THE LOOP
+
+
+SELECTIVE CONTROL STRUCTURE:
+----------------------------
+IF STATEMENT
+IF ELSE STATEMENT
+IF ELIF STATEMENT
+NESTED IF STATEMENT
+
+if statement syntax:
+--------------------
+if  expression:
+	statement1
+	statement2
+
+if...else statement syntax:
+---------------------------
+
+if expression:
+	statement1
+else:
+   	statement2
+
+
+
+if ...elif statement syntax:
+---------------------------
+
+if expression1:
+	statement(s)
+elif expression2:
+	statement(s)
+elif expression3:
+	statement(s)
+else:
+	statement(s)
+
+
+Nested if statement syntax:
+---------------------------
+
+The syntax of the nested if...elif...else construct may be -
+
+if expression1:
+   statement1
+   	if expression2:
+      	statement2
+   	else:
+      	statement3
+else:
+   statement4
+
+
+
+# Write a python program to find the greatest of 2 numbers
+
+a=int(input("Enter first number:"))
+b=int(input("Enter Second number:"))
+if a>b:
+      print("Greatest values=",a);
+else:
+    print("Greatest values=",b);
+
+# Write a python program to find the greatest of 3 numbers
+a=int(input("Enter first number:"))
+b=int(input("Enter second number:"))
+c=int(input("Enter Third number:"))
+if a>b and a>c:
+    print("A is greater=",a)
+elif b>c:
+    print("B is greater=",b)
+else:
+    print("C is greater=",c)
+
+Assignment:
+
+# Write a python program to find the greaest of 4 numbers.
+    
+
+
+# Write a python program to find the given year is leap year
+
+yr=int(input("Enter the year:"))
+if yr%4==0:
+    print("The given year is leap year= ",yr);
+else:
+    print("The given year is not leap year=",yr);
+
+II method
+
+# Write a python program to find the given year is leap year
+choice="y"
+while(choice=="y"):
+    yr=int(input("Enter the year"))
+    if yr%4==0:
+        print("The given year is leap year= ",yr);
+    else:
+        print("The given year is not leap year=",yr);
+    choice=input("Do you want to continue y/n:")
+    if(choice=="n"):
+        break;
+
+# write a python program to create login form
+
+uname=input("Enter username:")
+pwd=input("Enter Password:")
+
+if uname=="Scott" and pwd=="Tiger":
+    print("Welcome username:",uname)
+else:
+    print("Invalid username Try again:")
+
+
+Regular Expression:(Validation)
+---------------------
+
+* A regular expression is a special sequence of characters that helps you match or find other strings.
+
+*  Regular expressions are widely used in UNIX /Linux world.
+
+* The module re provides full support for Perl-like regular expressions in Python. 
+
+* The re module raises the exception re.error if an error occurs while compiling or using a regular expression.
+
+You can easily tackle many basic patterns in Python using the ordinary characters. Ordinary characters are the simplest regular expressions.
+
+* They match themselves exactly and do not have a special meaning in their regular expression syntax.
+
+
+Regular Expression:
+------------------
+Character classes:
+------------------
+1.[abc] = Either a or b or c
+2.[^abc] = Except a or b or c
+3.[a-z] = Any lower case alphabet symbol
+4.[A-Z] = Any upper case alphabet symbol
+5.[a-zA-Z] =Any alphabet symbols
+6.[0-9] = any digits from 0 to 9
+7.[a-zA-Z0-9] - Any alphanumeric character
+8.[^a-zA-Z0-9] - Except alphanumeric character (special character).
+
+9. \s - Space character
+10.\S - Any character Except space character
+11.\d - Any digit from 0 to 9
+12.\D - any character except digit
+13.\w - any word character[a-zA-Z0-9]
+14.\W - Any character except word character (Special character).
+15. . - Any character including special characters.
+
+
+Most Important Python Modules:
+------------------------------
+   re - Regular Expression
+   os  - operating system related functions
+   math - mathematical functions
+   cmd  - windows command prompt
+   csv - csv file (comma seprated values)
+   random - random number
+   Numpy ( numerical python )
+   scipy - scientific python
+   Pandas - graph,charts
+   Sys  - system related function
+   Matplotlib - database related 
+   Datetime - datetime function 
+   Time - time function 
+   calendar - calendar / date time function 
+   Tkinter - Graphical User Interface
+   Threading - Multiple Threading
+   Socket - Networking
+  webbrowser - browser function
+   cx_oracle - oracle function
+   pyodbc - sqlserver function 
+
+   
+
+
+# Write a python program to check whether the given number is valid mobile number or not
+
+import re
+n=input("Enter mobile number:")
+m=re.fullmatch("[6-9]{1}\d{9}",n)
+if m!=None:
+    print("Valid Mobile Number:",n)
+else:
+    print("Invalid Mobile number:",n)
+
+II method
+
+# Write a python program to check whether the given number is valid mobile number or not
+
+import re
+ch="y"
+while ch=="y":
+    n=input("Enter mobile number")
+    m=re.fullmatch("[6-9]\d{9}",n)
+    if m!=None:
+        print("Valid Mobile Number")
+    else:
+        print("Invalid Mobile number")
+    ch=input("Do you want to continue y/n")
+    if(ch=="n"):
+        break;
+
+--How to open the re Module?
+
+import re
+print(help(re))
+
+    
+# Write a python program to check whether the given pancard number  is valid  or not?
+
+Note: pancard rules:
+--------------------
+[A-Z]{5} - match five literals which can be A to Z
+[0-9]{4} - followed by 4 numbers 0 to 9
+[A-Z]{1} - followed by one literal which can A to Z
+
+import re
+n=input("Enter pancard number:")
+m=re.fullmatch("[A-Z]{5}[0-9]{4}[A-Z]{1}",n)
+if m!=None:
+    print("Valid pancard Number:",n)
+else:
+    print("Invalid pancard number:",n)
+
+# Write a python program to check whether the given Aadhar Card number is valid or not?
+
+Note: Addhar Card Number with regular expression. It's 12 digit number. in following format. It can contain 0 to 9 digits.
+
+Eg. 0000 0000 0000 
+
+import re
+n=input("Enter Aadhar card  number:")
+m=re.fullmatch("\d{4}\s\d{4}\s\d{4}",n)
+if m!=None:
+    print("Valid Aadhar Card Number:",n)
+else:
+    print("Invalid Aadhar Card number:",n)
+
+Assignment:
+
+# write a python program to check whether the given passpord number is valid or not?
+m=re.fullmatch([A-Z]{1}\d{7}",n)
+    
+
+# Write a python program to check whether the given mail id is valid gmail id or not?
+import re
+s=input("Enter mail id:")
+m=re.fullmatch("\w[a-zA-Z0-9_.]*@gmail.com",s)
+if m!=None:
+    print("Valid Mail id");
+else:
+    print("Invalid mail id")
+
+
+
+ # Write a python program to check whether the given mail id is valid gmail id or not?
+import re
+s=input("Enter mail id:")
+m=re.fullmatch("\w[a-zA-Z0-9_.]*@yahoo.com",s)
+n=re.fullmatch("\w[a-zA-Z0-9_.]*@gmail.com",s)
+if m!=None or n!=None:
+    print("Valid Mail id",s)
+else:
+    print("Invalid mail id",s)
+
+
+
+# Write a python program to check whether the given mail id is valid or not?
+import re
+s=input("Enter mail id")
+m=re.fullmatch("\w[a-zA-Z0-9@_.]*.com",s)
+
+if m!=None:
+    print("Valid Mail id");
+else:
+    print("Invalid mail id")
+
+
+
+# Write a python program to check whether the given car registration number is valid Telagana state Registration number or not 
+
+TS07BA3456
+TS09BA6514
+AP31AM2828
+GJ89AM8394
+DL10AA8934
+TN07AB2076
+TS01AA0001
+WB23AA3843
+KA06AA3894
+KA53YA8484
+TS04ED2693
+KA85AB8062
+TS04NZ2106
+PB04AA8349
+MH04EA3844
+JH05BZ1569
+GJ09AZ3848
+TN58EA3484
+KL84EA3848
+
+
+
+
+import re
+s=input("Enter Vechicle Registration number:")
+m=re.fullmatch("TS[0-4][0-9][A-Z]{2}\d{4}",s)
+if m!=None:
+    print("Valid Vehicle Registration number");
+else:
+    print("Invalid Vehicle Registration number")
+
+
+# Write a python program to check whether the given car registration number is valid Telangana and Andhra state Registration number or not 
+
+import re
+s=input("Enter Vechicle Registration number")
+m=re.fullmatch("TS[0-4][0-9][A-Z]{2}\d{4}",s)
+n=re.fullmatch("AP[0-4][0-9][A-Z]{2}\d{4}",s)
+if m!=None or n!=None:
+    print("Valid Vehicle Registration number");
+else:
+    print("Invalid Vehicle Registration number")
+
+
+
+# write a python program to find the greatest of 3 numbers
+x=int(input("Enter First number:"))
+y=int(input("Enter Second number:"))
+z=int(input("Enter Third number:"))
+if x>y and x>z:
+    print ("x is greater=",x)
+elif y>z:
+    print("y is greater=",y)
+else:
+    print("Z is greater=",z)
+
+
+
+
+
+# Example for nested if statement
+
+# write a python program to find the given number is positive or negative number or equal to zero
+
+num = int(input("Enter a number: ")) 
+if num >= 0:
+    if num == 0:
+        print("Zero")
+    else:
+        print("Positive number")
+else:
+    print("Negative number")
+
+
+
+
+
+Python Loops:
+-------------
+* To execute the task repeatedly in a looping.
+
+1.while loop
+2.for loop
+
+
+The syntax of a while loop in Python programming language is -
+
+while expression:
+   	statement(s)
+
+
+For loop syntax:
+
+Syntax
+
+for variable in sequence:
+   	statements(s)
+
+
+--examples
+
+# Write a python program to display numbers from 1...n
+n=int(input("Enter n values"))
+i=1;
+while i<=n :
+ print (i);
+ i=i+1;
+
+
+# Write a python program to display numbers from 1 2 3 4...n
+n=int(input("Enter n values"))
+for i in range(1,n,1):
+    print(i)
+
+1 - starting value (by default 0)
+n - ending value
+1 - increment value (by default 1)
+
+
+# Write a python program to display numbers from 2 4 6 ...n
+i=2
+n=int(input("Enter n values:"))
+while i<=n:
+    print(i,end=" ")
+    i=i+2
+    
+print("\n for loop \n")
+for i in range(2,n+1,2):
+    print(i,end=" ")
+    
+
+
+
+
+# Write a python program to display numbers from 5,10,15,20....n
+i=5
+n=int(input("Enter n value:"))
+while i<=n:
+    print(i,end=" ")
+    i=i+5
+
+
+print("\n\n")
+print("for loop")
+
+for i in range(5,n+1,5):
+    print(i,end=" ")
+    
+    
+
+
+      
+# Write a python program to display Multiplication Tables"
+ n  x i  =  r
+15 x 1 = 15
+15 x 2 = 30
+15 x 3 = 45
+
+
+
+15 x 15 = 225
+
+n=int(input("Enter n values:"))
+i=1;
+while i<=15:
+       r=n * i;
+       print(n," x ",i," = ",r);
+       i=i+1;
+
+--example2
+
+ch="y"
+while(ch=="y"):
+    n=int(input("Enter n values"))
+    i=1;
+    while i<=15:
+       r=n * i;
+       print(n," x ",i," = ",r);
+       i=i+1;
+    ch=input("Do you want to continue y/n:")
+    if(ch=="n"):
+        break;
+
+    
+
+
+
+# Example for Continue statement 1 2 3 4 5 7 9....10 (except 6)
+i = 0                 
+while i <10:              
+   i=i+1
+   if i==6:
+      continue
+   print ('Current variable value :', i)
+
+
+    
+# Example for break statement
+var = 0                 
+while var <10:              
+   var = var +1
+   if var == 6:
+      break
+   print ('Current variable value :', var)
+
+#   1 2 3 ......100 except (25,50,75) --Continue statement
+var = 0                 
+while var <100:              
+   var = var +1
+   if var == 25 or var==50  or var==75:
+      continue;
+   print("var value=",var)
+
+
+# Example for Continue statement 1 2 3 4 ....100(except 25 50 75)
+i=0
+while i<100:
+    i=i+1
+    if(i==25 or i==50 or i==75):
+        print(" * ",end="  ");
+        continue;
+    else:
+        print(i,end="  ");
+        
+
+    
+    
+
+ """Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
+D 100
+W 200
+W 350
+D 1000
+D 5000
+W 3000
+
+
+D means deposit while W means withdrawal.
+Suppose the following input is supplied to the program:
+D 300
+D 300
+W 200
+D 100
+Then, the output should be:
+500"""
+
+netAmount = 0
+while True:
+    s = input()
+    if not s:
+        break
+    list = s.split(" ") # used to convert string into list
+    operation = list[0]
+    amount = int(list[1])
+    if operation=="D":
+        netAmount+=amount
+    elif operation=="W":
+        netAmount-=amount
+    else:
+    pass
+print (netAmount)
+   
+
+NOTE:
+
+pass Statement:
+---------------
+
+The pass statement is used as a placeholder for future code.
+
+When the pass statement is executed, nothing happens, but you avoid getting an error when empty code is not allowed.
+
+Empty code is not allowed in loops, function definitions, class definitions, or in if statements.
+       
+      
+Different kind of for loops:
+----------------------------
+
+1.Count - Controlled for loop 
+
+2.Numeric Ranges -Range()
+
+3.Vectorized For loops - Arrays or Lists
+
+4.Iterator Based for loop - String
+
+
+1.Count - Controlled for loop (for i=1;i<=5;i++) 
+
+Note: This kind of for loop is Not implemented in Python.
+
+2.Numeric Ranges - This kind of for loops is a 
+simiplification of the Counter Controlled loop.
+
+* Its a counting or Enumerating loop.
+
+* Its starting with a start value and counting up to an end value, like for i=1 to 100
+
+range(start,end,increment)
+range(start,end) --by default increment 1
+range(end) - by defalut start with 0
+
+3.Vectorized For loops: (Array,list,tuple)
+
+Its Like Array programming a style of computer programming where operations are applied to whole arrays instead of individual elements.
+
+
+
+4.Iterator Based for loop (string).
+
+* This kind of a for loop iterators over an enumeration of a set of items.
+
+* It is characterized by the uses of implicit and explicit iterator
+
+* It is implmented in Python.
+
+ex:
+
+for variablename in sequence:
+	statement1
+	statement2
+
+
+--example1
+--iterator for loop
+
+for i in "Python":
+    print("My Character is ",i)
+
+--particluar range of values
+
+s="python"
+for i in range(2,len(s)):
+        print (s[i])
+
+
+
+--example2
+# vectorized for loop
+# I method
+
+nums=[1,2,3,4,5,6,7,8,9,10]
+sum=0
+for i in nums:
+    print(i)
+    sum=sum+i;
+print ("sum of the list values are =",sum);   
+
+II method
+
+# Vectorized for loop
+# How to accept runtime values?
+
+i=1
+nums=[]
+while i<=5:
+    s=int(input("Enter n values:"))
+    nums.append(s)
+    i+=1
+
+
+sum=0
+for i in nums:
+    print(i)
+    sum=sum+i;
+print ("sum of the list values are =",sum);    
+
+ 
+ 
+
+ 
+
+for with if:
+-----------
+mydata=[50,60,70,10,20,30]
+
+for i in mydata:
+    if i>=50:
+        print("Greater or equal values are :",i);
+    else:
+        print("Lesser values are :",i);
+print ("Loop Finished")
+
+
+ --example2
+
+
+Range function:
+--------------
+
+* It generates lists containing arithmetic progression. 
+* It returns a list of consecutive integers.
+
+* The function has one,two or three parameters where last two parameters are optional.
+
+* It is widely used in for loops.
+
+
+* 3 variations of range() function :
+-----------------------------------
+
+1.range(stop) starts from 0 till (stop -1)
+
+2.range(start,stop) - Ends at (stop -1)
+
+3.range(start,stop,step) - step cannot be 0 , default is 1.
+
+
+syntax:
+---------
+
+1.range(a);
+2.range(a,b);
+3.range(a,b,c);
+
+
+range(a) : Generates a sequence of numbers from 0 to a excluding a increment by 1.
+
+syntax:
+
+for i in range(5):
+    print (i);
+
+
+range(a,b)
+-------------
+
+* Generates a sequence of numbers from a to b Excluding b and increment by 1
+
+range(5,10)
+
+ 
+--example 
+
+a=int(input("Enter first number"))
+b=int(input("Enter second number"))
+for  x in range(a,b):
+        print (" x=",x)
+        
+
+range(a,b,c) :
+---------------
+
+* Generates a sequence of numbers from a to b excluding b incrementing by a.
+
+a=int(input("Enter first number"))
+b=int(input("Enter second number"))
+c=int(input("Enter increment values"))
+for  x in range(a,b,c):
+        print (" x=",x)
+        
+
+   
+#  Vectorized For loops examples
+
+languages = ["C", "C++", "Perl", "Python","java","Tableau"] 
+for x in languages:
+    print(x)
+
+
+: - Range operators
+
+syntax:
+------
+start:end:increment
+
+or
+
+languages = ["C", "C++", "Perl", "Python","Java","C#.Net"]
+print (languages[2:]);
+
+Reverse order:
+---------------
+
+languages = ["C", "C++", "Perl", "Python"] 
+print(languages[::-1])
+
+# reverse string
+n=input("Enter your name:")
+print(n[::-1])
+
+
+
+
+
+
+# Write a python program to display reverse words string?
+s=input("Enter any string:")
+l=s.split(" ") # used to convert string into list
+l.reverse()
+l.sort()
+s1=" ".join(l) # used to convert list into string
+print(s1)
+
+
+
+Iterator Based for loop:
+-------------------------
+
+* Plain  strings are also iterable.
+
+for s in "hello":
+    print (s)
+
+
+
+""" Write a program which will find all such numbers which are divisible by 7 but are not a divisible of 5,between 2000 and 3200 (both included).
+The numbers obtained should be printed in a comma-separated sequence on a single line. """
+
+
+for i in range(2000, 3201):
+    if (i%7==0) and (i%5!=0):
+        print(i,end=" ")
+
+
+""" Write a program that accepts a sentence and calculate the number of letters and digits.
+Suppose the following input is supplied to the program:
+hello world 123
+Then, the output should be:
+LETTERS 10
+DIGITS 3 """
+
+string function:
+-----------------
+isdigit() => 0 to 9
+isalpha() => a to z / A to Z
+isspace()
+isupper()
+islower()
+
+
+--Example
+
+s = input("Enter any string:")
+ch=0
+d=0
+for c in s:
+    if c.isdigit():
+        d=d+1;
+    elif c.isalpha():
+        ch=ch+1;       
+    else:
+        pass
+print ("LETTERS", ch)
+print ("DIGITS", d)
+
+--example2
+
+s = input()
+ch=0
+d=0
+s1=0
+for c in s:
+    if c.isdigit():
+        d=d+1;
+    elif c.isalpha():
+        ch=ch+1;       
+    elif c.isspace():
+        s1=s1+1;
+    else:
+        pass
+print ("LETTERS", ch)
+print ("DIGITS", d)
+print ("Space:",s1)
+
+
+"""Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+Suppose the following input is supplied to the program:
+Hello world!
+Then, the output should be:
+UPPER CASE 1
+LOWER CASE 9 """
+
+s = input("Enter any string:")
+ch=0
+d=0
+for c in s:
+    if c.isupper():
+        d=d+1;
+    elif c.islower():
+        ch=ch+1;
+    else:
+        pass
+print ("uppercase", d)
+print ("lowercase", ch)
+
+How to display Ascii values:
+--------------------------
+
+http://www.asciitable.com/
+
+for i in range(65,91):
+    print(chr(i),end=" ")
+print()
+for i in range(97,123):
+    print(chr(i),end=" ")
+print()
+for i in range(48,58):
+    print(chr(i),end=" ")
+
+
+
+
+# Program to sort alphabetically the words form a string provided by the user
+s=input("Enter Any string:")
+l=s.split()
+l.sort();
+print(l)
+
+
+
+Python Variable:
+----------------
+
+* A Python variable is a reserved memory location to store values. 
+
+* In other words, a variable in a python program gives data to the computer for processing.
+
+*  Every value in Python has a datatype.
+
+*  Different data types in Python are Numbers, List, Tuple, Strings, Dictionary, etc
+
+
+How to Declare and use a Variable?
+a=100 
+print (a)
+
+
+
+
+

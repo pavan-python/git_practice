@@ -1,0 +1,328 @@
+Python Software path:
+===================
+https://www.python.org/downloads/
+
+python operators:
+-------------------------
+* Arithmetical operators
+* Relational operators
+* Logical operators
+* Assignment operators
+* Arithmetical Assignment operators
+* Membership operators
+* Identity operators
+* Bitwise operators
+* Ternary operators
+
+Arithmetical operators:
+----------------------
++ addition
+- subtract
+* multiply
+/ division (float quotient)
+// division (int quotient)
+% division (remainder)
+** power
+
+10+3=13
+10-3=7
+10*3=30
+10/3=3.33333
+10//3=3
+10%3=1
+10**3=1000
+
+
+# write a python program to calculate multiplication of 3 numbers
+a=int(input("Enter first number:"))
+b=int(input("Enter Second number:"))
+c=int(input("Enter Third number:"))
+d=a*b*c
+print("Multiply=",d)
+
+
+# write a python  program to calculate all arithmetical operators
+a=int(input("Enter First number:"))
+b=int(input("Enter Second number:"))
+c=a+b
+d=a-b
+e=a*b
+f=a/b
+g=a//b
+h=a%b
+i=a**b
+print("Addition=",c)
+print("Subtract=",d)
+print("Multiply=",e)
+print("Float Quotient=",f)
+print("Int Quotient=",g)
+print("Remainder=",h)
+print("power value=",i)
+
+# Write a python program to calculate simple interest
+# si =pnr/100
+p=int(input("Enter principal amount:"))
+n=int(input("Enter number of year:"))
+r=int(input("Enter Rate of interest:"))
+si=(p*n*r)/100
+print("Simple interest=",si)
+
+Assignment:
+
+# write a python program to calculate compound interest?
+
+formula : A = P*(1 + (r/100))**n
+
+
+# Write a python program to interchange or exchange or swapping of 2  values
+a=int(input("Enter a values:"))
+b=int(input("Enter b values:"))
+t=a
+a=b
+b=t
+print("After swapping")
+print("a=",a)
+print("b=",b)
+
+
+# Write a python program to interchange or exchange or swapping of 2 values
+# Without using temporary variables
+a=int(input("Enter First number:")) 
+b=int(input("Enter Second number:")) 
+a=a+b 
+b=a-b 
+a=a-b 
+print("After swapping")
+print("a=",a)
+print("b=",b)
+
+
+
+
+# write a python program to convert number into weeks and days
+n=int(input("Enter number :"))
+w=n//7  # int Quotient
+d=n%7   # Remainder
+print("Number of weeks=",w)
+print("Number of days=",d)
+
+
+
+Relational operators:
+--------------------
+< less than
+> greater than
+<= less than or equal to
+>= greater than or equal to
+== equal to 
+!= not equal to
+
+# Example for Relational operators
+
+a=100
+b=200
+print("a>b",a>b)
+print("a<b",a<b)
+print("a==b",a==b)
+print("a!=b",a!=b)
+print("a<=b",a<=b)
+print("a>=b",a>=b)
+
+a>b>c
+
+Logical operators:
+-------------------------
+and
+or
+not 
+
+	and 	
+a	b	c=a*b
+0	0	0
+0	1	0
+1	0	0
+1	1	1
+
+Note: if all input values are true then output is true else false.
+
+	or
+a	b	c=a+b
+0	0	0
+0	1	1
+1	0	1
+1	1	1
+
+Note : if any one input values are true then output is true else false.
+
+	not
+a	c
+0	1
+1	0
+
+# Write a python program to find the greatest of 2 numbers
+a=int(input("Enter first number:"))
+b=int(input("Enter Second number:"))
+if a>b:
+    print("A is greater=",a)
+else:
+    print("B is greater=",b)
+    
+
+
+# Write a python program to find the greatest of 3 numbers
+a=int(input("Enter first number:"))
+b=int(input("Enter Second number:"))
+c=int(input("Enter Third number:"))
+if a>b and a>c:
+    print("A is greater=",a)
+elif b>c:
+    print("B is greater=",b)
+else:
+    print("C is greater=",c)
+
+
+# Write a python program to find the greatest of 4 numbers
+
+Solutins:
+
+a=int(input("Enter First number:"));
+b=int(input("Enter Second number:"));
+c=int(input("Enter Third number:"))
+d=int(input("Enter Fourth number:"))
+if a>b and a>c and a>d:
+    print("A is greater=",a);
+elif b>c and b>d:
+    print("B is greater=",b);
+elif c>d:
+    print("C is greater=",c)
+else:
+    print("D is greater=",d)
+
+Assignment:
+
+# Write a python program to find the greatest of 5 numbers
+
+# Write a python program to find the smallest of 5 numbers
+
+
+
+    
+# Write  a python program to display currently working directory name
+import os
+print(os.getcwd())
+
+
+# Write  a python program to display python software version number
+import sys
+print(sys.version)
+
+
+# Write a python program to display all keywords
+import keyword
+print(keyword.kwlist)
+print("Total=",len(keyword.kwlist))
+
+# Write a python program to display all keywords in string format
+import keyword
+l=keyword.kwlist
+l.sort()
+s="\n".join(l) # used to convert list into string
+print(s)
+print("Total keywords=",len(l))
+
+
+
+# Write a python program to create student mark list (Only one student)
+
+name=input("Enter sname:")
+sno=int(input("Enter Sno:"))
+s1=int(input("Enter Mark1:"))
+s2=int(input("Enter Mark2:"))
+s3=int(input("Enter Mark3:"))
+
+stot=s1+s2+s3
+savg=stot/3
+if s1>=40 and s2>=40 and s3>=40:
+    sres="Pass"
+else:
+    sres="Fail"
+
+    
+print("My name is=",name)
+print("My sno is=",sno)
+print("Total=",stot)
+print("Average=",round(savg,2))
+print("Result=",sres)
+
+# Multiple student mark list
+
+# Write a python program to create students mark list
+
+choice="y"
+while choice=="y":
+    name=input("Enter sname:")
+    sno=int(input("Enter Sno:"))
+    s1=int(input("Enter Mark1:"))
+    s2=int(input("Enter Mark2:"))
+    s3=int(input("Enter Mark3:"))
+
+    stot=s1+s2+s3
+    savg=stot/3
+    if s1>=40 and s2>=40 and s3>=40:
+        sres="Pass"
+    else:
+        sres="Fail"
+
+    
+    print("My name is=",name)
+    print("My sno is=",sno)
+    print("Total=",stot)
+    print("Average=",round(savg,2))
+    print("Result=",sres)
+    choice=input("Do you want to continue y/n:")
+    if(choice=="n"):
+        break;
+    
+Assignment operators:
+--------------------
+=
+a=10
+b=20
+c=a+b
+
+
+Arithmetical Assignment operators:
+----------------------------------
++=
+-=
+*=
+/=
+//=
+%=
+**=
+--example
+
+s=100
+s=s+50     or s+=50
+s=s-50	or s-=50
+s=s*50	or s*=50
+s=s/50	or s/=50
+s=s//50	or s//=50
+s=s%50	or s%=50
+s=s**50	or s**=50
+
+--examples
+
+s=100
+s+=50
+print("s=",s)
+s*=50
+print("s=",s)
+s/=50
+print("s=",s)
+s-=50
+print("S=",s)
+
+
+
+

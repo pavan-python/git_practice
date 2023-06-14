@@ -1,0 +1,297 @@
+Bit Wise operators:
+-------------------
+bitwise and - & => integer number
+
+bitwise or - |
+
+>> Right shift
+
+<< left shift
+
+
+
+a = 15            # 15 = 0000 1111
+b = 10            # 10 = 0000 1010 
+c = 0
+
+c = a & b;        # 10 = 0000 1010
+print ("Line 1 - Value of c is ", c)
+
+
+c = a | b;        # 15 = 0000 1111 
+print ("Line 2 - Value of c is ", c)
+
+
+
+c = a << 2;       # 60 = 0011 1100 (Multiply by 2)
+print ("Line 5 - Value of c is ", c)
+
+c = a >> 2;       # 3 = 0000 0011 (divide by 2 )
+print ("Line 6 - Value of c is ", c)
+
+
+
+
+Ternary Operators / Conditional operators:
+----------------------------------------------------------------
+syntax:
+
+x = firstvalue  if condition      else  secondvalue
+
+--example1
+# Read two numbers from the keyboard and print max.value
+
+a=int(input("Enter First number:"))
+b=int(input("Enter Second number:"))
+c=a if a>b else b
+print ("Max.value",c)
+
+II method
+
+# Read two numbers from the keyboard and print max.value
+choice="y"
+while choice=="y":
+    a=int(input("Enter First value:"))
+    b=int(input("Enter second value:"))
+    c=a if a>b else b
+    print("Max values=",c)
+    choice=input("Do you want to continue y/n")
+    if choice=="n":
+        break
+
+
+--example2
+
+
+# Read 3 numbers from the keyboard and print max.value
+
+a=int(input("Enter First number"))
+b=int(input("Enter Second number"))
+c=int(input("Enter Third number"))
+d=a if a>b and a>c else b if b>c else c
+print ("Max.value",d)
+
+
+# Read 4 numbers from the keyboard and print max.value
+
+a=int(input("Enter First number"))
+b=int(input("Enter Second number"))
+c=int(input("Enter Third number"))
+d=int(input("Enter fourth number"))
+e=a if a>b and a>c and a>d else b if b>c and b>d else c if c>d else  d
+print ("Max value",e)
+
+Assignment:
+------------
+
+# Read 5 numbers from the keyboard and print max.value
+# Read 5 numbers from the keyboard and print min.value
+
+
+
+python Interpreter:
+----------------------
+
+* An interpreter is a program that reads and executes code. 
+
+* This includes source code, pre-compiled code, and scripts. 
+
+* Common interpreters include Perl, Python, and Ruby interpreters, which execute Perl, Python, and Ruby code respectively
+
+* '>>>' is the prompt of the interactive Python interpreter, meaning that the interpreter is ready to get Python statements typed in.
+
+* In order to show which commands can be used and what will be the result of giving these commands to the interactive interpreter.
+
+
+Data Type Conversion:
+---------------------------
+
+* To Convert one datatype into another datatypes.
+
+Number -> String
+
+String -> Number
+
+String -> object
+
+Object -> string
+
+string -> float
+
+1.int(x) - To convert other datatype into int.
+
+2.float(x) - Converts x to a floating-point number.
+
+3.str(x) - Converts object x to a string 
+
+4.chr(x) - Converts an integer to a Ascii character.  - http://www.asciitable.com/
+
+5.ord(x) - Converts a single Ascii character to its integer value.
+
+7.hex(x) - Converts an integer to a hexadecimal 
+
+8.oct(x) - Converts an integer to an octal string.
+
+9.repr(x)- Converts object x to an expression string.
+
+10.eval(str) - Evaluates a string and returns an object. print(eval("50*20"))
+
+11.tuple(s) - Converts s to a tuple.()
+
+12.list(s) - Converts s to a list.[ ]
+
+13.set(s) -Converts s to a set.{ }
+
+14.dict(d) - Creates a dictionary. d must be a sequence of (key,value) tuples.
+
+15.frozenset(s) - Converts s to a frozen set.
+
+# Python code to demonstrate Type conversion
+
+print("int values=",int(250.555)) # 250
+print("float values-",float(250))   # 250.0
+print("str values=",str(1000))  # 1000
+print("repr values=",repr(1000)) # 1000
+print ("Ascii Char values=",chr(65))
+print ("Ord  values=",ord('A'))
+print ("hexa decimal values=",hex(40))
+print ("octal values=",oct(40))
+x=100;
+print("x values=",eval('x+55'))
+
+
+--example for set,list and tuple
+
+# Python code to demonstrate Type conversion
+# using  tuple(), set(), list()
+ 
+# initializing string
+s = 'python'
+ 
+# printing string converting to tuple
+c = tuple(s)
+print ("After converting string to tuple : ",c);
+
+ 
+# printing string converting to set
+c = set(s)
+print ("After converting string to set : ",c);
+
+ 
+# printing string converting to list
+c = list(s)
+print ("After converting string to list : ",c);
+
+
+
+1.How to clear the screen? (FAQ)
+
+* In python IDLE (Integrated Development Environment for python) there is no built in command to clear the screen.
+
+>>>print("\n" * 20)
+
+>>>clear= "\n" * 20
+>>>print (clear)
+
+Python comments or non executeable statement
+---------------------------------------------------------
+a.Single line comments  (#)
+b.Multi line comments (""" ....... """)
+
+
+Single line comments:
+----------------------
+
+* These comments are applicable to a specific line it always indicates with #(pound) symbols.
+
+ex:
+# hello
+# Script designed by : Shekar
+# Task assigned by : Sai
+
+Multi line comments:
+-------------------
+
+* applicable for one or more lines.
+
+* """ script designed by : Shekar
+      Task assigned by : Naresh """
+
+
+# example1
+test.py
+
+print("welcome to python scripting")
+print("It is easy and simple programming")
+print("Thank you")
+print("bye....")
+
+
+# example2
+
+x=input("Enter any number")
+y=input("Enter any number")
+z= int(x)+int(y)
+print ("Sum of 2 values=",z)
+
+
+# Example3
+
+import os
+print(os.getcwd())
+import sys
+print(sys.version)
+import keyword
+print(keyword.kwlist)
+print("Total=",len(keyword.kwlist))
+
+
+# How to open a text file using notepad as a help file in python?
+
+import os
+s = "notepad.exe First.py"
+os.system(s)
+
+
+
+
+Reserved Words:
+----------------
+* There are 35 reserved words available in python.
+
+* True,False,None, and, or , not , is,if,elif,else, while, for,break,continue,return,in,yield, try,except,finally,raise,assert,import,from,as,class,def,
+pass,global,nonlocal,lambda,del,with
+
+Python Contains the following inbuilt datatypes:
+------------------------------------------------
+1.int
+2.float
+3.complex
+4.bool
+5.str
+6.bytes
+7.bytearray
+8.range
+9.list
+10.tuple
+11.set
+12.frozenset
+13.dict
+14.None
+
+
+
+
+
+What is use of import keyword?
+
+* To make use of the functions in a module, you'll need to import the module with an import statement. 
+
+* An import statement is made up of the import keyword along with the name of the module.
+
+*  In a Python file, this will be declared at the top of the code
+
+import os
+import sys
+import keyword
+

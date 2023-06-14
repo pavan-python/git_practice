@@ -1,0 +1,342 @@
+﻿
+I Method 
+    
+# write a python program to create student mark list
+sname=input("Enter sname:")
+sno=int(input("Enter sno:"))
+m1=float(input("Enter Mark1:"))
+m2=float(input("Enter Mark2:"))
+m3=float(input("Enter Mark3:"))
+
+tot=m1+m2+m3
+avg=tot/3
+if m1>=40 and m2>=40 and m3>=40:
+    res="pass"
+else:
+    res="fail"
+print("----------------------------")
+print("Sname is=",sname)
+print("Sno is=",sno)
+print("Mark1 is=",m1)
+print("Mark2 is=",m2)
+print("Mark3 is=",m3)
+print("Total is=",tot)
+print("Average is=",round(avg,2))
+print("Result=",res)
+print("-----------------------------")
+
+    
+
+
+II Method
+
+# write a python program to create Multiple student mark list
+choice="y"
+while(choice=="y"):
+    sname=input("Enter sname:")
+    sno=int(input("Enter sno:"))
+    m1=float(input("Enter Mark1:"))
+    m2=float(input("Enter Mark2:"))
+    m3=float(input("Enter Mark3:"))
+
+    tot=m1+m2+m3
+    avg=tot/3
+    if m1>=40 and m2>=40 and m3>=40:
+        res="pass"
+    else:
+        res="fail"
+    print("----------------------------")
+    print("Sname is=",sname)
+    print("Sno is=",sno)
+    print("Mark1 is=",m1)
+    print("Mark2 is=",m2)
+    print("Mark3 is=",m3)
+    print("Total is=",tot)
+    print("Average is=",round(avg,2))
+    print("Result=",res)
+    print("-----------------------------")
+    choice=input("Do you want to continue y/n:")
+    if choice=="n":
+        break;
+    
+
+  
+# How to open .exe file in python?
+
+import os
+os.system("notepad.exe")
+os.system("mspaint")
+os.system("calc")
+os.system("python")
+os.system("C:\\6.15pm\\Ragul\\emp1.xls");
+
+# How to open webbrowser window using python code?
+
+import webbrowser
+webbrowser.open('http://www.python.org')
+webbrowser.open("http://www.unisys.com")
+
+
+
+Assignment:
+------------
+# write a python program to create employee salary list
+
+ename="xxx"
+empno=1001
+sal=10000
+hra =1200 
+ma=1500
+ta=2000
+pf=2500
+lic=1500
+itax=2500
+grosspay=sal+hra+ma+ta
+netpay=grosspay - (pf+lic+itax)
+
+
+
+
+
+
+
+Assignment operators:
+---------------------
+=
+
+a=100;
+b=200;
+c=a+b;
+d="Raja";
+
+# example for assignment operators
+
+a=100;
+b=200
+c=a+b;
+d="Raja";
+print("a=",a)
+print("b=",b)
+print("c=",c)
+print("d=",d)
+
+a=100;
+a+=50;
+
+Arithmetical Assignment operators
+===========================
+
++=
+-=
+*=
+/=
+%=
+**=
+//=
+
+a=100;
+a=a+50; or a+=50
+a=a-50; or a-=50
+a=a*50  or a*=50
+a=a/50  or a/=50
+a=a//50	or a//=50
+a=a**50	or a**=50
+a=a%50 or  a%=50
+
+
+# example for arithmetical assignment operators
+a=100
+a+=50
+print("a +=50",a)
+a-=50
+print("a-=50",a)
+a*=50
+print("a*=50",a)
+a/=50
+print("a/=50",a)
+a%=50
+print("a%=50",a)
+
+
+--How to accept input values from keyboard?
+
+ans: input()
+
+--How to display the output values?
+
+ans: print()
+
+input() syntax:
+---------------
+
+variable=input("Any string")
+
+print() syntax:
+-----------------
+print("Any string",value/variable)
+
+--example1 (I method)
+
+a=input("Enter First Number :")
+b=input("Enter Second Number :")
+c=input("Enter Third Number :")
+d=int(a) * int(b)* int(c)
+e=int(a) + int(b)+int(c)
+print ("Result=",d)
+print ("Addition=",e)
+
+
+--II method
+
+a=int(input("Enter First Number :"))
+b=int(input("Enter Second Number :"))
+c=int(input("Enter Third Number :"))
+d=a * b *c
+e=a + b+ c
+print ("Result=",d)
+print ("Addition=",e)
+
+Python Special operators:
+--------------------------------------
+1.Membership operators (in or not in) -values checking
+
+2.Identity operators( is or is not) - datatypes and values 
+
+Membership operators:
+---------------------
+* They are used to test whether a value or variable is found in a sequence (string,list,tuple,set and dictionary).
+
+* it returns true or false.
+
+Note : In a dictionary we can only test for presence of key, not the value.
+
+operator	Meaning
+
+in     True if value/variable is found in the sequence.
+
+Not in True if value/variable is not found in the sequence.
+
+--example1
+
+list=["Kumar","raj","Madhu","Nagesh","Siva","Henry"]
+print(list)
+name=input("Enter your name:")
+if (name in  list):
+    print("My student name is:",name)
+else:
+    print("Invalid student name:",name)
+
+II Method
+
+list=["Kumar","raj","Madhu","Nagesh","Siva","Henry","Srinivas","Shivani"]
+print(list)
+choice="y"
+while (choice=="y"):
+    name=input("Enter name:")
+    if name in list:
+        print("My Student name is=",name)
+    else:
+        print("Invalid student name is=",name)
+    choice=input("Do you want to continue....y/n")
+    if(choice=="n"):
+        break;
+    
+
+--example2
+
+numbers=[100,200,300,400,500,600]
+print(numbers)
+n=int(input("Enter n values:"))
+if n in numbers:
+    print("Valid number:",n)
+else:
+    print("Invalid number:",n)
+    
+
+--II Method
+
+c="y"
+while c=="y":
+    numbers=[100,200,300,400,500,600]
+    print(numbers)
+    n=int(input("Enter n values:"))
+    if n in numbers:
+        print("Valid number:",n)
+    else:
+        print("Invalid number:",n)
+    c=input("Do you want to continue y/n:")
+    if(c=="n"):
+        break;
+    
+
+
+# example for membership operators
+
+x="Hello World";
+y="Raj shekar"
+print("H" in x);
+print("Hello" not in x)
+print('x' in y)
+print('a' in y)
+
+# write a python program to find the given mailid is valid or not?
+
+mailid="jason@gmail.com"
+s=' '
+if '@' in mailid and  s not in mailid:
+    print("Valid mail id",mailid);
+else:
+    print("Invalid mail id:",mailid)
+
+
+
+
+--example2 
+  
+numbers=[100,200,300,400,500]
+print(numbers)
+no=int(input("Enter any number:"))
+if no in numbers:
+    print("Available number=",no)
+else:
+    print("Not Available number=",no)
+
+    
+
+
+
+# example3 for membership operators
+x = 4
+y = 8
+list = [1, 2, 3, 4, 5 ];
+if ( x in list ):
+   print("Line 1 - x is available in the given list")
+else:
+   print("Line 1 - x is not available in the given list")
+if ( y not in list ):
+   print("Line 2 - y is not available in the given list")
+else:
+   print("Line 2 - y is available in the given list")
+
+Identity Operators: (datatypes)
+--------------------
+
+'is' operator – Evaluates to true if the variables on either side of the operator point to the same object and false otherwise.
+
+'is not' operator – Evaluates to false if the variables on either side of the operator point to the same object and true otherwise. 
+
+
+Operator		Meaning
+is	True if the operands are identical
+is not	True if the operands are not identical.
+
+Example1
+
+# Python program to illustrate the use 
+# of 'is' identity operator
+x = 5
+if (type(x) is int):
+    print ("true")
+else:
+    print ("false")
+

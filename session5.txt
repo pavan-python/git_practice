@@ -1,0 +1,545 @@
+﻿Nested For Loops.
+-----------------------
+* Loops can be nested in Python, as they can with other programming languages. 
+
+* The program first encounters the outer loop, executing its first iteration. 
+
+* This first iteration triggers the inner, nested loop, which then runs to completion.
+
+Syntax
+
+for i in sequence:
+   for j in sequence:
+      statements(s)
+   statements(s)
+
+The syntax for a nested while loop statement in Python programming language is as follows -
+
+while expression:
+   while expression:
+      statement(s)
+   statement(s)
+--Example
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+line - for loop
+print char - for loop
+
+Line - while loop or for loop
+print char - while loop or for loop
+
+Python end parameter in print()
+--------------------------------
+* By default python’s print() function ends with a newline. 
+
+* Python’s print() function comes with a parameter called ‘end’. 
+
+* By default, the value of this parameter is ‘\n’, i.e. the new line character. 
+
+* You can end a print statement with any character \string using this parameter.
+
+
+"""
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+"""
+for i in range(1,6): # line
+    for j in range(1,i+1):  # print char
+        print(j,end=" ")
+    print()
+
+
+
+
+"""
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+"""
+
+for i in range(1,6): # line
+    for j in range(1,i+1):  # print char
+        print(i,end=" ")
+    print()
+
+
+
+
+
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+c=1
+for i in range(1,6): # line
+    for j in range(1,i+1):  # print char
+        print(c,end=" ")
+        c=c+1
+    print()
+
+
+
+
+
+
+* 
+*  *
+*  *  * 
+*  *  *   *
+*  *  *   *  *
+
+   
+for i in range(1,6): # line
+    for j in range(1,i+1):  # print char
+        print(" * ",end=" ")
+    print()
+# write python program to print the following format
+
+ *   *   *   *   *   *   *   *   *   *  
+ *   *   *   *   *   *   *   *   *  
+ *   *   *   *   *   *   *   *  
+ *   *   *   *   *   *   *  
+ *   *   *   *   *   *  
+ *   *   *   *   *  
+ *   *   *   *  
+ *   *   *  
+ *   *  
+ *  
+
+
+for i in range(11,1,-1):
+    for j in range(i,1,-1):
+        print(" * ",end=" ")
+      
+    print()
+    
+   
+# Write a program in Python to produce Star triangle.
+
+r=int(input("Enter n values:"))
+for x in range(r):
+        print(' '*(r-x-1)+'*'*(2*x+1))    
+
+
+
+
+
+
+Functions
+---------
+* Large programs are divided into small programs is known as function.
+
+* Functions are a construct to structure programs.
+
+*  They are known in most programming languages, sometimes also called subroutines or procedures.
+
+*  Functions are used to utilize code in more than one place in a program. 
+
+* The only way without functions to reuse code consists in copying the code.
+
+A function in Python is defined by a def statement. The general syntax looks like this:
+
+def function-name (Parameter list):
+    statements;
+
+
+def test():
+     print('in test function')
+
+
+
+
+test()
+
+
+Note
+
+By default, functions return None.
+
+Note
+
+Note the syntax to define a function:
+
+    the def keyword;
+    is followed by the function’s name, then
+    the arguments of the function are given between parentheses followed by a colon.
+    the function body;
+    and return object for optionally returning values.
+
+--Function examples 
+
+First.py
+
+def Square(a):
+    return(a*a)
+
+def Cube(a):
+    return(a*a*a)
+
+def Average(a,b):
+    return((a+b)/2)
+
+# How to invoke function from same module
+
+a=int(input("Enter First number:"))
+b=int(input("Enter Second number:"))
+print("Square values=",Square(a))
+print("Cube values=",Cube(a))
+print("Average values=",Average(a,b))
+    
+
+
+
+# How to invoke function from another module ( I Method)?
+
+Second.py (Same Directory)
+
+import First
+
+a=int(input("Enter First number:"))
+b=int(input("Enter Second number:"))
+print("Square value=",First.Square(a))
+print("cube values=",First.Cube(a))
+print("Average values=",First.Average(a,b))
+
+
+II method
+
+
+# How to invoke function from another module ( II Method)?
+
+from First import *
+
+a=int(input("Enter First number:"))
+b=int(input("Enter Second number:"))
+print("Square value=",Square(a))
+print("cube values=",Cube(a))
+print("Average values=",Average(a,b))
+
+    
+
+
+# how to know howmany functions are created on particular module?
+import First
+print(help(First))
+print(dir(First))
+
+    
+
+c:\demo\Arithmetic.py
+
+def Addition(a,b):
+    return(a+b)
+def Subtract(a,b):
+    return (a-b)
+def Multiply(a,b):
+    return(a*b)
+def Division(a,b):
+    return(a/b)
+
+if __name__=="__main__":
+    print("Addition=",Addition(100,200))
+    print("Subtract=",Subtract(100,200))
+    print("Multiply=",Multiply(100,200))
+    print("Division=",Division(100,20))
+
+--How to calling the function from another module ?
+
+import Arithmetic
+
+print("Addition=",Arithmetic.Addition(100,200))
+print("Subtract=",Arithmetic.Subtract(100,200))
+print("Multiply=",Arithmetic.Multiply(100,200))
+print("Division=",Arithmetic.Division(100,20))
+
+--How to check the module function details?
+
+import Second
+print(help(Second)) -- return string format (Details information)
+print(dir(Second)) -- return list format (Limited information)
+
+
+
+__name__ :
+
+*  Every module in Python has a special attribute called __name__ . 
+
+* It is a built-in variable that returns the name of the module.
+
+*  __main__ : Like other programming languages, Python too has an execution entry point i.e. main.
+
+
+area.py
+#Area of a Triangle
+def calculate_area(base,height):
+    return 1/2 * (base * height)
+
+
+if __name__ =="__main__":
+    a=calculate_area(100,20)
+    print ("Area values=",a)
+
+
+
+caller.py
+
+import area
+print("I am in caller.py")
+x=area.calculate_area(5,10)
+print("x value=",x);
+
+# write a python program to display reverse digits
+n=789
+r=987
+
+reverse number algorithm in c language:
+n=697
+s=0
+while(n>0)
+{
+r=n%10; 
+s=s*10+r; 
+n=n/10; 
+}
+
+
+def reverse(n):
+        s=0
+        while(n>0):
+            r=n%10
+            s=s*10+r
+            n=n//10
+        print("Reverse values=",s)
+        
+         
+    
+if __name__ == "__main__":
+	n=int(input("Enter n values:"))
+        reverse(n)
+
+# write a python program to display sum of digits
+n=1234 => 10
+
+def sumdigit(n):
+        s=0
+        while(n>0):
+            r=n%10
+            s=s+r
+            n=n//10
+        print("sum digit values=",s)
+        
+         
+    
+if __name__ == "__main__":
+        sumdigit(697)
+
+
+# write a python program to find the count of digits
+
+
+def countdigit(n):
+        s=0
+        while(n>0):
+            r=n%10
+            s=s+1
+            n=n//10
+        print("count digit values=",s)
+        
+         
+    
+if __name__ == "__main__":
+        countdigit(697)
+
+
+#  write a python program to find the given number is armstrong or not
+
+n=153 => 1+125+27=>153
+n=370 => 27+343+0=> 370
+n=371 => 27+343+1 => 371
+n=407=> 64+0+343 => 407
+
+def armstrong(n):
+        n1=n
+        s=0
+        while(n>0):
+            r=n%10
+            s=s+r*r*r
+            n=n//10
+        if n1==s:
+                print("Given Number Armstrong=",n1);
+        else:
+                print ("Give Number Not Armstrong=",n1);
+        
+      
+    
+if __name__ == "__main__":
+    n=int(input("Enter Number:"))
+    armstrong(n)
+
+Recap:
+
+reverse digits 	=>s=s*10+r
+sum of digit 	=>s=s+r
+count of digits 	=>s=s+1
+armstrong number	=>s=s+r*r*r
+
+
+
+
+
+# example for function 
+
+1!=1
+2!=1x2=2
+3!=1x2x3=6
+4!=1x2x3x4=24
+5!=1x2x3x4x5=120
+n!=1x2x3....n =
+
+def Factorial(n):
+    i=1
+    f=1
+    while i<=n:
+        f=f*i;
+        i=i+1;
+    return f;
+
+
+if __name__ == "__main__":
+    x=int(input("Enter n value"))
+    print("Factorial values=",Factorial(x))
+
+
+
+# write a  Function to display hostname and  IP address 
+
+import socket
+------------------------
+
+gethostname()  --> Hostname
+gethostbyname() -> IP Address
+
+
+
+import socket
+def test(): 
+        host_name = socket.gethostname() 
+        host_ip = socket.gethostbyname(host_name) 
+        print("Hostname :  ",host_name) 
+        print("IP : ",host_ip) 
+     
+if __name__ =="__main__":
+	test() 
+
+
+
+ # Write a Python function to create and print a list where the values are square # of numbers between 1 and 20
+ 
+def printValues():
+    i=1
+    while i<=20:
+        l=i*i
+        print(i,"Squares",l)
+        i=i+1
+	        
+printValues()
+
+
+Function Positional Arguments:
+------------------------------
+
+* Function arguments can be specified by position or by keyword.
+
+*  Keywords make it clear what the purpose of each argument is when it would be confusing with only positional arguments. 
+
+* Keyword arguments with default values make it easy to add new behaviors to a function, especially when the function has existing callers.
+
+example
+
+
+def cube(x,y,z):
+    return x*y*z
+
+
+--how to invoke function 
+
+cube(5,3,5);
+
+
+
+--example 2
+
+def abc(a,b,c=2):
+    return (a+b+c)
+
+
+--How to invoke function?
+
+>>> abc(100,200);
+
+output : 302
+
+
+
+
+
+Variable Arguments:
+-----------------------------
+
+* The special syntax, *args and **kwargs in function definitions is used to pass a variable number of arguments to a function. 
+
+The single asterisk form ( *args ) is used to pass a non-keyworded, variable-length argument list, and the double asterisk form is used to pass a keyworded, variable-length argument list.
+
+
+
+--example1
+
+def manyArgs(*args):
+  print ("I was called with", len(args), "arguments:", args)
+
+manyArgs(10,20,30,50,60,40,30,40,50,50)
+manyArgs(100,200,300)
+manyArgs(10,20)
+manyArgs(10)
+
+--example2
+
+
+def manyArgs(*args):
+    s=0
+    for i in args:
+        s=s+i
+    print ("I was called with", len(args), "arguments:", args)
+    print("Sum=",s)
+
+manyArgs(10,20,30,50,60,40,30,40,50,50)
+manyArgs(100,200,300)
+manyArgs(10,20)
+manyArgs(10)
+
+
+
+--example3
+
+def print_kwargs(**kwargs):
+        print(kwargs)
+
+
+if __name__ == "__main__":
+	print_kwargs(name="sekar",age=25,salary=35000,gender="Male",classes="xxx", session="python" ,std="3")
+
+
+
+

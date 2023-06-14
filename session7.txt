@@ -1,0 +1,321 @@
+Python Dictionary:
+------------------
+* In python  dictionary is a collection which is unordered, changeable and indexed. 
+
+* dictionaries are written with curly brackets, and they have keys and values.
+
+* Each key is separated from its value by a colon :
+
+* the items are separated by commas, and the
+whole thing is enclosed in curly braces. 
+
+* An empty dictionary without any items is written with just two curly braces, like this: {}.
+
+* Keys are unique within a dictionary while values may not be. 
+
+* The values of a dictionary can be of
+any type, but the keys must be of an immutable data type such as strings, numbers, or tuples.
+
+Dictionary Declaration:
+----------------------
+d ={'Name' : 'Zara' , 'Age' : 7, 'Class' : 'First' };
+
+
+
+Dictionary Methods:
+-----------------
+copy()
+clear()
+get(key)
+pop()	-Removes the element with the specified key
+popitem()-	Removes the last key-value pair
+values()	Returns a list of all the values in the dictionary
+update(dict)
+
+
+Accessing Values in Dictionary:
+--------------------------------
+dict ={'Name' : 'Zara' , 'Age' : 7, 'Class' : 'First' };
+
+print ("dict['Name']: ", dict['Name'])
+print ("dict['Age']: ", dict['Age'])
+print ("dict['Class']",dict['Class'])
+
+
+
+Updating values in Dictionary:
+-------------------------------
+
+dict ={'Name':'Zara','Age':7,'Class':'First'};
+print(dict)
+dict ['Age']=8;
+# update existing entry
+dict['School']="Hps School";
+# Add new entry
+print(dict)
+
+# Deleting values in Dictionary:
+
+dict1 ={'Name':'Zara','Age':7,'Class':'First'};
+del  dict1 ['Name']; # only one item
+print(dict1)
+dict1.clear(); # delete all items
+print(dict1)
+del dict1   # delete all values and memory
+print(dict1)
+
+# How to interchange or exchange dictionary values?
+
+dict ={'Name':'Zara','Age':7,'Class':'First'};
+print(dict)
+
+t=dict['Name']
+dict['Name']=dict['Class']
+dict['Class']=t
+print(dict)
+
+
+
+--Examples for Dictionary
+
+# create a dictionary
+squares = {1:1, 2:4, 3:9, 4:16, 5:25}  
+print(squares.pop(4))  
+print(squares)
+print(squares.popitem())  #last value
+print(squares)
+del squares[2]  
+print(squares)
+squares.clear()
+print(squares)
+
+--Examples 2
+
+textSpeakDictionary = {
+    "lol"   : "laugh out loud" ,
+    "idk"   : "I don't know",
+    "fyi"   : "For your Information",
+    "asap" :"As Soon As Possible"
+}
+
+#print the entire dictionary
+print( "Dictionary =" , textSpeakDictionary )
+
+#print just the entry for "lol"
+print( "lol =" , textSpeakDictionary["lol"] )
+
+#ask for the key to find the entry for
+key = input("What would you like to translate :")
+print( key , "=" , textSpeakDictionary[key])
+
+# Write a program to Sorting the Keys and Values in Alphabetical Order using the Key. 
+
+dict = {'shekar':'10','abhilash':'9','sami':'15','mani':'2','raj':'32'} 
+dict1 = sorted(dict.items())
+print(dict1) 
+
+
+--Nested Dictionary
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+          2: {'name': 'Marie', 'age': '22', 'sex': 'Female'}}
+
+print(people)
+
+
+Accessing the Nested Dictionary :
+-----------------------------------
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+          2: {'name': 'Marie', 'age': '22', 'sex': 'Female'}}
+
+print(people[1]['name'])
+print(people[1]['age'])
+print(people[1]['sex'])
+
+# How to add or change the Nested Dictionary
+
+
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+          2: {'name': 'Marie', 'age': '22', 'sex': 'Female'}}
+
+people[3] = {}
+
+people[3]['name'] = 'Luna'
+people[3]['age'] = '24'
+people[3]['sex'] = 'Female'
+people[3]['married'] = 'No'
+
+print(people[3])
+
+# How to accept runtime values?
+
+#How to add or change the Nested Dictionary
+
+
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+              2: {'name': 'Marie', 'age': '22', 'sex': 'Female'}}
+
+people[3] = {}
+
+people[3]['name'] = input("Enter name");
+people[3]['age'] = int(input("Enter age"))
+people[3]['sex'] = input("Enter sex")
+people[3]['married'] = input("Enter Married status")
+
+print(people[3])
+
+# How to accept runtime values mulitple records?
+
+choice="y"
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+          2: {'name': 'Marie', 'age': '22', 'sex': 'Female'}}
+
+
+i=len(people)+1 # returns number of rows
+
+
+while choice=="y":
+    people[i] = {}
+    people[i]['name'] = input("Enter name");
+    people[i]['age'] = int(input("Enter age"))
+    people[i]['sex'] = input("Enter sex")
+    people[i]['married'] = input("Enter Married status")
+    i+=1
+    choice=input("Do you want to continue y/n:")
+    if(choice=="n"):
+        break;
+print(people)
+        
+
+
+# How to add another values to the Nested Dictionary?
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+          2: {'name': 'Marie', 'age': '22', 'sex': 'Female'},
+          3: {'name': 'Luna', 'age': '24', 'sex': 'Female', 'married': 'No'}}
+
+people[4] = {'name': 'Peter', 'age': '29', 'sex': 'Male', 'married': 'Yes'}
+print(people[4])
+
+
+# How to delete the elements from Nested Dictionary?
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+          2: {'name': 'Marie', 'age': '22', 'sex': 'Female'},
+          3: {'name': 'Luna', 'age': '24', 'sex': 'Female', 'married': 'No'},
+          4: {'name': 'Peter', 'age': '29', 'sex': 'Male', 'married': 'Yes'}}
+
+del people[3]['married']
+del people[4]['married']
+
+print(people[3])
+print(people[4])
+
+# How to delete the multiple elements from Nested Dictionary?
+
+people = {1: {'name': 'John', 'age': '27', 'sex': 'Male'},
+          2: {'name': 'Marie', 'age': '22', 'sex': 'Female'},
+          3: {'name': 'Luna', 'age': '24', 'sex': 'Female', 'married': 'No'},
+          4: {'name': 'Peter', 'age': '29', 'sex': 'Male', 'married': 'Yes'}}
+
+for i in range(1,5):
+    if i in (3,4):
+        del people[i]
+    else:
+        print(people[i])
+
+
+        
+
+
+# How to reterive the elements from Nested Dictionary?
+
+people = {1: {'Name': 'John', 'Age': '27', 'Sex': 'Male'},
+          2: {'Name': 'Marie', 'Age': '22', 'Sex': 'Female'},
+          3: {'Name': 'Manthan', 'Age': '25', 'Sex': 'male'}}
+
+for p_id, p_info in people.items():
+    print("\nPerson ID:", p_id)
+    
+    for key in p_info:
+        print(key + ':', p_info[key])
+
+
+# Write a Python script to merge two Python dictionaries.
+
+d1 = {'a': 100, 'b': 200}
+d2 = {'x': 300, 'y': 200}
+d1.update(d2)
+print(d1)
+
+#Write a Python program to multiply all the items in a dictionary.
+
+my_dict = {'data1':100,'data2':5,'data3':2}
+result=1
+for key in my_dict:    
+    result=result * my_dict[key]
+
+print(result)
+
+#Write a Python program to remove a key from a dictionary.
+
+
+myDict = {'a':1,'b':2,'c':3,'d':4}
+print(myDict)
+if 'a' in myDict: 
+    del myDict['a']
+print(myDict)
+
+# How to Insert key-value pair into dictionary at a specified position? (FAQ)
+
+I Method
+
+
+mydict = {'Name': 'Shekar', 'Age': 27, 'Class': 'First'} 
+
+mylist = ['Name', 'Age', 'Class']
+
+
+k, v = 'Phone', '9999877777'
+
+mylist.insert(mylist.index('Age')+1, k)
+mydict[k] = v
+
+for k in mylist:
+    print(k,"=>",mydict[k])
+
+II Method
+=========
+
+# How to Insert key-value pair into dictionary at a specified position? (FAQ)
+
+
+mydict = {'Name': 'Shekar', 'Age': 27, 'Class': 'First'} 
+mylist= []
+for i in mydict.items():
+    mylist.append(i[0])
+
+    
+k, v = 'Phone', '9999877777'
+
+mylist.insert(mylist.index('Age')+1, k)
+mydict[k] = v
+
+for k in mylist:
+    print(k,"=>",mydict[k])
+
+
+Nested Dictionary Key Points:
+----------------------------
+Key Points to Remember:
+
+    1.Nested dictionary is an unordered collection of dictionary
+    2.Slicing Nested Dictionary is not possible.
+    3.We can shrink or grow nested dictionary as need.
+    4.Like Dictionary, it also has key and value.
+    5.Dictionary are accessed using key.
+

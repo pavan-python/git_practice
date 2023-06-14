@@ -1,0 +1,887 @@
+# Example for Mathematical Calculators
+
+# define functions  
+def add(x, y):
+    return x + y 
+def subtract(x, y):
+    return x - y 
+def multiply(x, y):
+    return x * y 
+def divide(x, y): 
+    return x / y  
+# take input from the user
+ch="y"
+while(ch=="y"):
+    print("Select operation.")  
+    print("1.Add")  
+    print("2.Subtract")  
+    print("3.Multiply")  
+    print("4.Divide")  
+      
+    choice = input("Enter choice(1/2/3/4):")  
+      
+    num1 = int(input("Enter first number: "))  
+    num2 = int(input("Enter second number: "))  
+      
+    if choice == '1':
+        print(num1,"+",num2,"=", add(num1,num2))  
+      
+    elif choice == '2':
+        print(num1,"-",num2,"=", subtract(num1,num2))  
+      
+    elif choice == '3':
+        print(num1,"*",num2,"=", multiply(num1,num2))  
+    elif choice == '4':
+        print(num1,"/",num2,"=", divide(num1,num2))  
+    else:
+        print("Invalid input")
+    ch=input("Do you want to continue y/n")   
+        
+
+# Python ATM Banking Example
+
+print('Welcome to HDFC Bank ATM')
+restart=('Y')
+chances = 3
+balance = 8000
+while chances >= 0:
+    pin = int(input('Please Enter You 4 Digit Pin: '))
+    if pin == (1234):
+        print('You entered you pin Correctly\n')
+        while restart not in ('n','NO','no','N'):
+            print('Please Press 1 For Your Balance\n')
+            print('Please Press 2 To Make a Withdrawl\n')
+            print('Please Press 3 To Pay in\n')
+            print('Please Press 4 To Return Card\n')
+            option = int(input('What Would you like to choose?'))
+            if option == 1:
+                print('Your Balance is ,balance',balance)
+                restart = input('Would You you like to go back? ')
+                if restart in ('n','NO','no','N'):
+                    print('Thank You')
+                    restart=('y')
+                    break
+            elif option == 2:
+                option2 = ('y')
+                withdrawl = float(input('How Much Would you like to withdraw?  '))
+                if withdrawl in [1000, 2000, 3000, 4000, 5000, 10000]:
+                    balance = balance - withdrawl
+                    print ('\nYour Balance is now',balance)
+                    restart = input('Would You you like to go back? ')
+                    if restart in ('n','NO','no','N'):
+                        print('Thank You')
+                        break
+                elif withdrawl != [10, 20, 40, 60, 80, 100]:
+                    print('Invalid Amount, Please Re-try\n')
+                    restart = ('y')
+                elif withdrawl == 1:
+                    withdrawl = float(input('Please Enter Desired amount:'))    
+
+            elif option == 3:
+                Pay_in = float(input('How Much Would You Like To Pay In? '))
+                balance = balance + Pay_in
+                print ('\nYour Balance is now ',balance)
+                restart = input('Would You you like to go back? ')
+                if restart in ('n','NO','no','N'):
+                    print('Thank You')
+                    break
+            elif option == 4:
+                print('Please wait whilst your card is Returned...\n')
+                print('Thank you for you service')
+                break
+            else:
+                print('Please Enter a correct number. \n')
+                restart = ('y')
+    elif pin != ('1234'):
+        print('Incorrect Password')
+        chances = chances - 1
+        if chances == 0:
+            print('\nNo more tries')
+            break
+
+
+Assignment:
+-----------
+1.We have to check the language if it is english ok else invalid language
+
+2.we have to add Transaction type either current / saving account
+
+current account --valid
+saving account -- invalid
+
+3.if input amount > balance then raise error message
+else
+balance=balance - amount
+
+
+        
+
+object oriented programming:
+----------------------------
+Basic concept of OOPS:
+-----------------------
+1.Object
+2.Class
+3.Inheritance
+4.Polymorphism
+5.Data Abstraction
+6.Data Encapsulation
+7.Dynamic binding
+8.Message Passing
+
+
+Object : is an entity.
+
+Each and every objects have two parts:
+
+1.Data part  or Member data
+
+2.Function part or method
+
+
+* objects may communicate with each other through method.
+
+* Data is hidden and cannot be accessed by external method.
+
+Class:
+--------
+* In python every thing is an object. To create objects we required some Model or Plan or BluePrint, which is nothing but a Class.
+
+* We can write a class to represent properties(Attributes) and actions(behaviour) of object.
+
+* Properties can be represented by variables.
+
+* Actions can be represented by Methods.
+
+
+* Within the python class we can represent data by using variables.
+
+* There are 3 types of variables allowed.
+
+1.Instance Variables (Object Level Variables)
+2.Static Variables ( Class level variables)
+3.Local variables (Method Level Variables)
+
+
+
+Class Definition Syntax
+------------------------
+
+class ClassName:
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+
+# How to access the class members?
+
+obj = classname();
+
+
+
+Class Variables:
+---------------
+
+* A variable that is shared by all instances of a class. 
+
+* Class variables are defined within a class but outside any of the class's methods. 
+
+* Class variables are not used as frequently as instance variables.
+
+Data member:
+-------------
+ A class variable or instance variable that holds data associated with a class and its objects.
+
+
+Instance:
+-----------
+An individual object of a certain class. An object obj that belongs to a class Circle,
+for example, is an instance of the class Circle.
+
+Instantiation:
+--------------
+ The creation of an instance of a class.
+
+In java syntax:
+
+Classname objname = new Classname();
+
+
+python syntax:
+
+obj = classname();
+ex:
+std=Student();
+
+self: is the default variable or attribute
+
+Method :
+---------
+ A special kind of function that is defined in a class definition.
+
+
+# 1. class without parameter
+class Person:
+    def getdata(self):
+        self.name="Abhi sharma"
+        self.age=25
+        self.salary=25000
+    def putdata(self):
+        print("my name is=",self.name)
+        print("My age is=",self.age)
+        print("My salary is=",self.salary)
+
+# how to invoke class members
+if __name__  == "__main__":
+    obj=Person();
+    obj.getdata()
+    obj.putdata()
+    
+
+
+--example 2
+# Class with parameter
+
+class Person:
+    def getdata(self,name,age,salary):
+        self.name=name
+        self.age=age
+        self.salary=salary
+    def putdata(self):
+        print("My name is=",self.name);
+        print("My age is=",self.age);
+        print("My salary is=",self.salary)
+    
+# How to invoke class methods
+if __name__  == "__main__":
+    obj=Person();
+    obj.getdata("shekar",25,25000);
+    obj.putdata();
+
+
+# 3.class with runtime values
+class Person:
+    def getdata(self):
+        self.name=input("Enter ename:")
+        self.age=int(input("Enter Age:"))
+        self.salary=int(input("Enter salary:"))
+    def putdata(self):
+        print("My name is=",self.name)
+        print("My age is=",self.age)
+        print("My Salary is=",self.salary)
+
+
+if __name__ == "__main__":
+    obj = Person(); # To create object or instance
+    obj1=Person()
+    obj.getdata()
+    obj1.getdata()
+    obj.putdata();
+    obj1.putdata()
+    
+
+
+
+First.py
+
+# user defined module
+
+class Person:
+    def getdata(self):
+        self.name="Dheeraj"
+        self.age=25;
+        self.salary=35000
+    def putdata(self):
+        print("My name is=",self.name);
+        print("My age is=",self.age);
+        print("My salary is=",self.salary)
+    
+Second.py
+
+# How to invoke class methods from another module
+from First import *
+
+if __name__  == "__main__":
+    obj=Person();
+    obj.getdata();
+    obj.putdata();
+
+
+or
+
+import First
+# how to invoke class members
+p=First.Person()
+p.getdata("Naveen",30,30000)
+p.putdata()
+
+
+
+--example2
+
+# 1.Classes Without parameter
+
+class Student:    
+    def getdata(self):
+        self.sname="Shekar";
+        self.sno=101;
+        self.mark=200;
+
+    def putdata(self):
+        print("My name=",self.sname);
+        print("My sno=",self.sno);
+        print("My mark=",self.mark);
+
+   
+std1 = Student();  # Instance creation  //Constructor
+std2 = Student(); # Instance creation
+std1.getdata();
+std2.getdata();
+std1.putdata();
+std2.putdata(); 
+
+
+
+# 2.class with parameter
+
+class Student:
+    
+    def getdata(self,sname,sno,mark):
+        self.sname=sname;
+        self.sno=sno;
+        self.mark=mark;
+
+
+    def putdata(self):
+        print("My name=",self.sname);
+        print("My sno=",self.sno);
+        print("My mark=",self.mark);
+
+std1 = Student();  //Instance creation
+std2 = Student(); //Instance creation
+std1.getdata("Guna",101,250);
+std2.getdata("shekar",102,350);
+std1.putdata();
+std2.putdata();
+
+# 3. class with  Runtime values?
+
+class Student:      
+    def getdata(self):
+        self.sname=input("Enter sname:")
+        self.sno=int(input("Enter sno:"))
+        self.mark=int(input("Enter Mark:"))
+
+
+    def putdata(self):
+        print("My name=",self.sname);
+        print("My sno=",self.sno);
+        print("My mark=",self.mark);
+
+   
+std1 = Student();  # Instance creation  //Constructor
+std2 = Student(); # Instance creation
+std1.getdata();
+std2.getdata();
+std1.putdata();
+print("-------------------------------")
+std2.putdata(); 
+
+        
+Note:
+
+* self represents the instance of the class. 
+
+* By using the "self" keyword we can access the attributes and methods of the class in python. 
+
+* __init__ : "__init__" is a reserved method in python classes. 
+
+* It is known as a constructor in object oriented concepts.
+
+Assignment :
+
+1. To create employee class (ename,empno,salary,hra,da,ta..)
+2. To create Dept class(deptno,dname,loc,TL...)
+3. To create customer class(cname,accno,balance,ttype,....)
+
+
+
+
+--Example 2
+
+class Student:    
+    def getdata(self):
+        self.sname=input("Enter Your Name");
+        self.sno=int(input("Enter Your No"))
+        self.s1=int(input("Enter S1 mark"))
+        self.s2=int(input("Enter S2 mark"))
+        self.s3=int(input("Enter S3 mark"))
+        self.total=0;
+        self.avg=0;
+        self.result="";
+    
+    def calculate(self):
+        self.total=self.s1+self.s2+self.s3;
+        self.avg=self.total/3
+        if self.s1>=40 and self.s2>=40 and self.s3>=40:
+            self.result="Pass";
+        else:
+            self.result="Fail";
+        
+    def putdata(self):
+        print("=======================");
+        print("My name=",self.sname);
+        print("My sno=",self.sno);
+        print("My total=",self.total);
+        print("My avg=",self.avg);
+        print("My Grade=",self.result);
+        print("=======================");
+
+    
+std1 = Student();  # Instance creation  
+std2 = Student(); # Instance creation
+std3 = Student();
+std1.getdata();
+std2.getdata();
+std3.getdata();
+std1.calculate();
+std2.calculate();
+std3.calculate();
+std1.putdata();
+std2.putdata();
+std3.putdata();
+
+Assignment:
+
+class : Employee
+
+ename
+eno
+basicpay
+hra
+ma
+ta
+pf
+lic
+itax
+grosspay=basicpay+hra+ma+ta
+netpay=grosspay -(pf+lic+itax)
+
+
+
+
+Python Constructors: (__init__())
+-----------------------------------------------
+
+* A constructor is a special type of method (function) which is used to initialize the instance members of the class. 
+
+* Constructor can be parameterized and non-parameterized as well. 
+
+* Constructor definition executes when we create object of the class. 
+
+obj=classname();
+
+* Constructors also verify that there are enough resources for the object to perform any start-up task.
+
+Creating a Constructor
+
+* A constructor is a class function that begins with double underscore (_). The name of the constructor is always the same __init__().
+
+* While creating an object, a constructor can accept arguments if necessary. When we create a class without a constructor, Python automatically creates a default constructor that doesn't do anything.
+
+* Every class must have a constructor, even if it simply relies on the default constructor.
+
+
+Non Parameterized Constructor:
+------------------------------
+
+class Student:
+    def __init__(self):  
+            print("This is non parametrized constructor")
+    def show(self,name):  
+            print("Hello",name)
+std= Student()
+std.show("Shekar")
+ 
+Parameterized Constructor:
+--------------------------
+
+class Student:
+    def __init__(self,name):  
+            print("This is parametrized constructor")
+            self.name=name;
+    def show(self):  
+            print("Hello",self.name)
+std= Student("Raja")
+std.show()
+ 
+            
+What is the Differences between Methods and Constructors:
+----------------------------------------------------------
+Method:
+------
+1.Name of the method can be any name.
+
+2.Method will be executed if we call that method.
+std.show()
+std.getdata();
+
+3.Per object, method can be called any number of times.
+for i in range(1,10):
+	std.show();
+
+4.Inside method we can write business logic.
+ def calculate(self):
+	self.stot=self.s1+self.s2+self.s3;
+
+
+Constructor:
+------------
+
+1.Constructor name always should be __init__.
+
+2.Constructor will be executed automatically at the time of object creation.  
+obj=Student();
+
+        
+3.Per object, Constructor will be executed only once.
+           
+4.Inside Constructor we have to declare and initialize instance variables.
+def __init__(self):
+	self.sno=100;
+	self.mark=100;
+
+
+   
+        
+
+--example1
+
+# Example for Parameterized Constructor
+
+class Student:
+    
+    def __init__(self,sname,sno,mark):
+        self.sname=sname;
+        self.sno=sno;
+        self.mark=mark;
+
+
+    def display(self):
+        print("My name=",self.sname);
+        print("My sno=",self.sno);
+        print("My mark=",self.mark);
+
+std1 = Student("Guna",101,100);
+std2 = Student("Shekar",102,200);
+std1.display();
+std2.display();
+
+        
+--example2
+#count the employees(no of employees find)
+class Employee:
+    empCount = 0 # class variable
+    def __init__(self, name, salary):  #local variable
+         self.name = name
+         self.salary = salary
+         Employee.empCount += 1
+
+    def displayEmployee(self):
+        print ("Name : ", self.name, ", Salary: ", self.salary)
+
+if __name__== "__main__":
+    emp1 = Employee("Zara", 2000)
+    emp2 = Employee("Manni", 5000)
+    emp3 = Employee("Shekar",4560)
+    emp1.displayEmployee()
+    emp2.displayEmployee()
+    emp3.displayEmployee()
+    print("No.of Employees=",Employee.empCount);
+
+
+# Write a Python Program to Find the Area of a Rectangle Using Classes 
+
+class rectangle():
+    def __init__(self,breadth,length):
+        self.breadth=breadth
+        self.length=length
+        
+    def area(self):
+        return self.breadth*self.length
+    
+
+a=int(input("Enter length of rectangle: "))
+b=int(input("Enter breadth of rectangle: "))
+obj=rectangle(a,b)
+print("Area of rectangle:",obj.area())
+ 
+
+
+
+# Write a Python Program to Append, Delete and Display Elements of a List Using Classes
+
+class check():
+    def __init__(self):
+        self.n=[ ]
+    def add(self,a):
+        return self.n.append(a)
+    def remove(self,b):
+        self.n.remove(b)
+    def dis(self):
+        return (self.n)
+ 
+obj=check()
+ 
+choice=1
+while choice!=0:
+    print("0. Exit")
+    print("1. Add")
+    print("2. Delete")
+    print("3. Display")
+    choice=int(input("Enter choice: "))
+    if choice==1:
+        n=int(input("Enter number to append: "))
+        obj.add(n)
+        print("List: ",obj.dis())
+ 
+    elif choice==2:
+        n=int(input("Enter number to remove: "))
+        obj.remove(n)
+        print("List: ",obj.dis())
+ 
+    elif choice==3:
+        print("List: ",obj.dis())
+    elif choice==0:
+        print("Exiting!")
+    else:
+        print("Invalid choice!!")
+ 
+print()
+
+
+# Write a Python Program to Create a Class and Compute the Area and the Perimeter of the Circle 
+
+import math
+class circle():
+    def __init__(self,radius):
+        self.radius=radius
+    def area(self):
+        return math.pi*(self.radius**2)
+    def perimeter(self):
+        return 2*math.pi*self.radius
+ 
+r=int(input("Enter radius of circle: "))
+obj=circle(r)
+print("Area of circle:",round(obj.area(),2))
+print("Perimeter of circle:",round(obj.perimeter(),2))
+
+
+
+How to access the class members from outside?
+
+getattr()
+setattr()
+delattr()
+hasattr()
+
+
+Instead of using the normal statements to access attributes, you can use the following functions -
+
+The getattr (obj, name[, default]) : to access the attribute of object.
+
+The hasattr (obj, name) : to check if an attribute exists or not.
+
+The setattr (obj, name, value) : to set an attribute. If attribute does not exist, then it would be created.
+
+The delattr( obj, name ): to delete an attribute.
+
+#--Example for getattr,setattr,hasattr,delattr
+
+class Student:
+    student_id=""
+    student_name=""
+
+    # initial constructor to set the values
+    def __init__(self):
+        self.student_id = "101"
+        self.student_name = "Shekar"
+
+student = Student()
+# get attribute values by using getattr() function
+print('\ngetattr : name of the student is =', getattr(student, 'student_name'))
+setattr(student,'student_name','guna')
+
+# but you could access this like this
+print('traditional: name of the student is =', student.student_name)
+print('has attribute=',hasattr(student,'student_name'))
+delattr(student,'student_name')
+print('student_name member data deleted')
+
+print('traditional: name of the student is =', student.student_name)
+
+
+
+
+Built-In Class Attributes:
+--------------------------
+
+Every Python class keeps following built-in attributes and they can be accessed using dot operator
+
+like any other attribute -
+
+__dict__: Dictionary containing the class's namespace.
+
+__doc__: Class documentation string or none, if undefined.
+
+__name__: Class name.
+
+__module__: Module name in which the class is defined. This attribute is "__main__" in interactive mode.
+
+__bases__: A possibly empty tuple containing the base classes, in the order of their occurrence in the base class list.
+
+
+--Example for Built in Class Attributes:
+---------------------------------------
+
+class Employee:
+    """ document  any comments Sahil Abhijit Raviendar"""
+    empCount = 0  
+    def __init__(self, name, salary):
+         self.name = name
+         self.salary = salary
+         Employee.empCount += 1
+
+    def displayCount(self):
+        print ("Total Em ployee %d" % Employee.empCount)
+    
+    def displayEmployee(self):
+        print ("Name : ", self.name, ", Salary: ", self.salary)
+
+if __name__=="__main__":
+    emp1 = Employee("Zara", 2000)
+    emp2 = Employee("Manni", 5000)
+    emp1.displayEmployee()
+    emp2.displayEmployee()
+    print ("Total Em ployee %d" % Employee.empCount)
+    print("doucment=",Employee.__doc__);
+    print ("Em ployee.__nam e__:", Employee.__name__)
+    print ("Em ployee.__m odule__:", Employee.__module__)
+    print ("Em ployee.__bases__:", Employee.__bases__)
+    print ("Em ployee.__dict__:", Employee.__dict__)
+
+# Creating a class based Library management system in Python (OOP)
+
+
+steps:
+=====
+library ---1)availble books
+	   2)lend books and 3)add books(back)
+
+student----1)rquest book and 2)return books
+
+
+
+
+import sys
+class Library:
+      def __init__(self,listofbooks):
+            self.availablebooks=listofbooks
+
+      def displayAvailablebooks(self):
+                   print("The books we have in our library are as follows:")
+                   print("================================")
+                   for book in self.availablebooks:
+                         print(book)
+      
+      def lendBook(self,requestedBook):
+            if requestedBook in self.availablebooks:
+                  print("The book you requested has now been borrowed")
+                  self.availablebooks.remove(requestedBook)
+            else:
+                  print("Sorry the book you have requested is currently not in the library")
+                  
+      def addBook(self,returnedBook):
+            self.availablebooks.append(returnedBook)
+            print("Thanks for returning your borrowed book")
+            
+
+class Student:
+      def requestBook(self):
+            print("Enter the name of the book you'd like to borrow>>")
+            self.book=input()
+            return self.book
+
+      def returnBook(self):
+            print("Enter the name of the book you'd like to return>>")
+            self.book=input()
+            return self.book
+
+def main():            
+      library=Library(["Python","Dotnet","Cpp","Java","Tableau"])
+      student=Student()
+      done=False
+      while done==False:
+            print(""" ======LIBRARY MENU=======
+                  1. Display all available books
+                  2. Request a book
+                  3. Return a book
+                  4. Exit
+                  """)
+            choice=int(input("Enter Choice:"))
+            if choice==1:
+                        library.displayAvailablebooks()
+            elif choice==2:
+                        library.lendBook(student.requestBook())
+            elif choice==3:
+                        library.addBook(student.returnBook())
+            elif choice==4:
+                  sys.exit()
+                  
+main()
+
+
+
+
+Assignment : Hotel Management
+
+
+
+
+Destructor:
+----------
+* The constructor is implemented using __init__(self) which you can define parameters that follows the self. 
+
+* The destructor is defined using __del__(self).
+
+in Java Destructor
+
+class Student
+{
+Student(); //Constructor declared
+~Student(); //Destructor declared
+}
+
+In python Destructor
+
+class Student:
+  def __init__(self); // Constructor declared
+  def __del__(self); //Destructor declared
+
+
+--Example for destructor
+
+class TestClass:    
+    def __init__(self):
+        print ("constructor")
+
+    def __del__(self):
+        print ("destructor")
+
+if __name__ == "__main__":
+    obj = TestClass()
+    print("Main Function")
+    print("God is great");
+    print("Time is gold");
+    del obj

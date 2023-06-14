@@ -1,0 +1,446 @@
+Inheritance
+---------------
+* Inheritance is a process of creating  a new class from an old one class. (i.e. reuse existing methods, attributes etc).
+
+* It also referred to as reusability of the code so by using Inheritance we can reuse the code again and again.
+
+* Inheritance means parent-child relationship.
+
+* In Inheritance main existing class is called as generalized class, base class, super class and parent class. 
+
+* The new class created from existing class is called as specialized class, sub class, child class and derived class.
+
+* The meachanism of deriving a new class from an old one class is called inheritance.
+
+* Old class referred to as the base class,parent class,super class.
+
+* new class referred to as the derived class,child class,sub class.
+
+* We normally talk in terms of base class and derived class.
+
+Types of inheritance:
+---------------------
+1.single inheritance
+2.Multiple inheritance
+3.multilevel inheritance
+4.Hierarchical inheritance
+5.Hybrid inheritance
+
+Single inheritance:
+-------------------
+Only one base class and one derived class is called Single inheritance.
+
+father->child
+
+Multiple inheritance:
+-----------------------
+
+* A dervied class contains more than one base class is called Multiple inheritance.
+
+
+Multi level inheritance:
+-----------------------
+
+* A derived class derived from base class which is again derived from class.
+
+A->B->C->D->E
+grandfather->father->child
+
+Hierarchial inheritance:
+--------------------------
+* A one base class contains more than one derived class.
+father->child1 and child2
+
+
+Hybird Inheritance:
+-------------------
+*Combination of multiple + multilevel inheritance.
+
+
+
+Syntax of Inheritance
+
+class SubClassName (ParentClassname1,ParentClassname2):
+'Optional class documentation string'
+class_suite
+
+--Example for Single inheritance
+--------------------------------
+
+class base1:
+     def input(self):
+         print("Base1 class input method");
+        
+     def output(self):
+         print("Base1 class output method ");
+     
+class derived1(base1):
+    def show(self):
+        print("Derived1 class show method");
+        
+    def view(self):
+        print("Derived1 class view method");
+        
+d1 =derived1()
+d1.show();
+d1.view();
+d1.input();
+d1.output();
+     
+--Example 2
+
+class Country:
+     def ShowCountry(self):
+         print("This is India..");
+
+
+class State(Country):
+     def ShowState(self):
+         print("This is Telagana..");
+   
+
+st =State();
+st.ShowCountry();
+st.ShowState();
+ 
+
+--Example 3
+
+class department():
+    def setdept(self, no, name):
+        self.dno = no;
+        self.dname = name;
+        
+    def putdept(self):
+        print("Deptno = " , self.dno);
+        print("Deptname = " , self.dname);
+
+class employee(department):
+    def setemp(self,no,name):
+        self.eno = no;
+        self.ename = name;
+        
+    def putemp(self):
+        print("Empno = " ,self.eno);
+        print("Ename = " ,self.ename);
+       
+
+
+      
+d = employee();
+d.setemp(101,"sekar");
+d.setdept(10,"HR");
+d.putemp();
+d.putdept();
+           
+# Example for multilevel inheritance
+
+class stud:
+    def setstud(self,sno,sname):
+        self.sno = sno;
+        self.sname = sname;
+        
+    def putstud(self):
+        print("Student No : " ,self.sno);
+        print("Student Name : ",self.sname);
+       
+class marks(stud):
+    def setmarks(self, m1,m2):
+        self.mark1 = m1;
+        self.mark2 = m2;
+       
+    def putmarks(self):
+        print("Mark1 : " , self.mark1);
+        print("Mark2 : " , self.mark2);
+       
+class result(marks):
+    def calc(self):
+        self.total = self.mark1 + self.mark2;
+       
+    def puttotal(self):
+        print("Total : " , self.total);
+
+r =result();
+r.setstud(40,"Kiran");
+r.setmarks(50,60);
+r.calc();
+r.putstud();
+r.putmarks();
+r.puttotal();
+
+
+# Example for multiple inheritance
+
+class stud:
+    def method1(self,sno,sname):
+        self.sno = sno;
+        self.sname = sname;
+        
+    def method2(self):
+        print("Student No : " ,self.sno);
+        print("Student Name : ",self.sname);
+       
+class marks:
+    def setmarks(self, m1,m2):
+        self.mark1 = m1;
+        self.mark2 = m2;
+       
+    def putmarks(self):
+        print("Mark1 : " , self.mark1);
+        print("Mark2 : " , self.mark2);
+       
+class result(marks,stud): # multiple inheritance
+    def calc(self):
+        self.total = self.mark1 + self.mark2;
+       
+    def puttotal(self):
+        print("Total : " , self.total);
+
+r =result();
+r.method1(40,"Kiran");
+r.setmarks(50,60);
+r.calc();
+r.method2();
+r.putmarks();
+r.puttotal();
+
+
+
+
+
+#example for hierarchical inheritance
+class one:
+    def __init__(self):
+        self.x=100;
+        self.y=200
+        print("This is the method in class one");
+        print("Value of X= ",self.x);
+        print("Value of Y= ",self.y);
+
+class two (one):
+    def add(self):
+        print("This is the method in class two");
+        print("X+Y= ",(self.x+self.y));
+
+class three (one):
+    def mul(self):
+        print("This is the method in class three");
+        print("X*Y= ",(self.x * self.y));
+
+t1=two();	
+t2=three();	
+t1.add();		
+t2.mul();
+
+#Example for Hybrid inheritance: (Assignment)
+--------------------------------
+
+* Combination of multiple and multilevel
+
+class stud:
+    def setstud(self,sno,sname):
+        self.sno = sno;
+        self.sname = sname;
+        
+    def putstud(self):
+        print("Student No : " ,self.sno);
+        print("Student Name : ",self.sname);
+       
+class marks(stud):
+    def setmarks(self, m1,m2):
+        self.mark1 = m1;
+        self.mark2 = m2;
+       
+    def putmarks(self):
+        print("Mark1 : " , self.mark1);
+        print("Mark2 : " , self.mark2);
+
+class pratical:
+    def getpractial(self,p1):
+        self.p1=p1;
+
+    def putpractial(self):
+        print("Practial mark=",self.p1);
+    
+
+      
+class result(marks,pratical): # Multiple inheritance + Multilevel 
+    def calc(self):
+        self.total = self.mark1 + self.mark2+self.p1;
+       
+    def puttotal(self):
+        print("Total : " , self.total);
+
+r =result();
+r.setstud(40,"Kiran");
+r.setmarks(50,60);
+r.getpractial(100);
+r.calc();
+r.putstud();
+r.putmarks();
+r.putpractial()
+r.puttotal();
+
+
+
+Python Access specifier
+----------------------
+
+class TestClass(object):
+    def method1(self):
+        print ("I am a public method")
+    def _method2(self):
+        print ("I am Protected method")
+    def __method3(self):
+        print ("I am a private method")
+
+if __name__ == '__main__':
+    obj = TestClass()
+    obj.method1()
+    obj._method2()
+    obj._TestClass__method3()
+
+
+
+--example for single inheritance:
+--------------------------------
+
+class Parent: # define parent class
+    parentAttr = 100
+    def __init__(self):
+        print ("Calling parent constructor")
+    def parentMethod(self):
+        print ('Calling parent method')
+    def setAttr(self, attr):
+        Parent.parentAttr = attr
+    def getAttr(self):
+        print ("Parent attribute :", Parent.parentAttr)
+class Child(Parent): # define child class
+    def __init__(self):
+        print ("Calling child constructor")
+    def childMethod(self):
+        print ('Calling child method')
+c = Child() # instance of child
+c.childMethod() # child calls its m ethod
+c.parentMethod() # calls parent's m ethod
+c.setAttr(200) # again call parent's m ethod
+c.getAttr()
+
+
+--Multiple inheritance:
+-----------------------
+
+class A: # define your class A
+.....
+class B: # define your calss B
+.....
+class C(A, B): # subclass of A and B
+
+
+Method overloading: Same methodname but different argument list.
+
+ex:
+
+add(int,int)
+add(int,int,int)
+add(float,float)
+add(string,string)
+add(int,int) # invalid
+
+Note: Python does not support overloading
+
+Method overriding:
+--------------------------
+ 
+* Same methodname and Same argument list but we are going to access in multiple classes(Inherited classes).
+
+
+
+class parent:
+    def view(self):
+        print("Base class view method");
+
+    def show(self):
+        print("Base class show method");
+        
+
+class child (parent):
+    def view(self):
+        super(child,self).view();# it invokes the base        
+        print("Child class view method");
+        
+    def show(self):
+        super(child,self).show();#it invokes the base
+        print("child class show method")
+        
+
+obj = child();
+obj.view();
+obj.show();
+
+
+
+super () 
+----------
+The super() method is most commonly used with __init__ function in base class. This is usually the only place where we need to do some things in a child then complete the initialization in the parent.
+
+Overriding Methods:
+-------------------
+
+class Parent: # define parent class
+    def myMethod(self):
+        print ('Calling parent method')
+
+class Child(Parent): # define child class
+    def myMethod(self):
+        print ('Calling child method')
+c = Child() # instance of child
+c.myMethod()
+
+
+Overriding Constructor
+----------------------
+
+class First(object):  
+      def __init__(self):  
+        super(First, self).__init__()  
+        print("first")  
+      
+class Second(First):  
+      def __init__(self):  
+        super(Second, self).__init__()  
+        print("second")  
+      
+class Third(Second):  
+      def __init__(self):  
+        super(Third, self).__init__()  
+        print("third")  
+
+
+obj = Third();
+
+
+--example2
+
+
+class First(object):  
+      def __init__(self):
+          self.x=100         
+          print("x value=",self.x)
+           
+      
+class Second(First):  
+      def __init__(self):
+          super(Second, self).__init__()
+          self.x=10.577
+          print("x value=",self.x)
+          
+      
+class Third(Second):  
+      def __init__(self):          
+        super(Third, self).__init__()
+        self.x=1000
+        print("x value=",self.x)
+
+
+obj = Third();
